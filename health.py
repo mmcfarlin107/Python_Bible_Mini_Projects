@@ -1,4 +1,5 @@
 # Creating a health potion for an imaginary game in Python
+#The harder the difficulty, the less health you get on average.
 
 import random
 

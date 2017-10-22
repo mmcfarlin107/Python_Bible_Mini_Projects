@@ -1,4 +1,4 @@
-# for loop practice script to push dictionary values into a new list
+# for loop practice script to append dictionary values into a new list
 
 students = {
     'male': ['doug', 'brad', 'kenny', 'smith'],

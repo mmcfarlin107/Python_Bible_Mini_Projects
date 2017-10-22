@@ -1,3 +1,6 @@
+#Script that randomly selects a question from a baby that you must answer
+#The only answer to make the baby be quiet is the simple answer 'just because'
+
 from random import choice
 
 questions = ['Why is the sky blue?: ',

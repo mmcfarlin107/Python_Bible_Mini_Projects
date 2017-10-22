@@ -1,3 +1,5 @@
+#Asks for a users information and returns it to the console.
+
 # Ask user for name
 name = input("What's your name?: ")
 

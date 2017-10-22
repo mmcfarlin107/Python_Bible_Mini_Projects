@@ -1,14 +1,18 @@
-#list is [age to see film, amt of seats still available]
+#Mini project as if this were a mini cinema with age restrictions and limited seats.
+#You can only see a film if you are old enough and there are seats available.
+
+
+#list elements are [age minimum to see film, amt of seats still available]
 
 films = {
-    "Titanic": [3,5],
-    "Wizard Of Oz": [18,5],
-    "Tarzan": [15,5],
-    "Big Boy": [12,5]
+    "Titanic": [18, 5],
+    "Wizard Of Oz": [0,5],
+    "Tarzan": [13,5],
+    "Rocky": [13,5]
 }
 
 while True:
-    choice = input("What film would you like to watch?: ").strip().title()
+    choice = input("What film would you like to watch (Titanic: R, Rocky: R, Tarzan: PG - 13, or Wizard of Oz: G)?: ").strip().title()
     if choice in films:
         age = int(input('How old are you?: ').strip()) # checking user age
         if age >= films[choice][0]:

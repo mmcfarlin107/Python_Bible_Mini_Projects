@@ -1,4 +1,4 @@
-#gets a sentence from a user and converts it to Pig Latin then returns it to user
+#Project receives a sentence from a user and converts it to Pig Latin, then returns it to the user
 
 # get sentence from user
 original = input('Please enter a sentence: ').strip().lower()
