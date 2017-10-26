@@ -22,13 +22,24 @@ def print_board():
 # If the input is a valid number for the game and the space is not taken, the player gets the spot.
 # If the spot is taken or the input is not a valid number, the function uses recursion to call itself again.
 def player_move(letter):
-    move = int(input("What space would you like player " + letter + " (1-9)?: ").strip())
-    if move in range(1, 10) and board[move - 1] == "_":
-        board[move - 1] = letter
-        global counter
-        counter += 1
+    # added or statement in 'move' variable below to avoid error if input is left empty.
+    # otherwise 'move' is null and this will throw an error below
+    move = input("What space would you like player " + letter + " (1-9)?: ").strip() or "empty"
+    if move in "123456789":
+        move = int(move)
+        if board[move - 1] == "_":
+            board[move - 1] = letter
+            global counter
+            counter += 1
+        else:
+            print()
+            print('That space is taken! Choose again...')
+            print()
+            player_move(letter)
     else:
+        print()
         print('Invalid Choice! Choose again...')
+        print()
         player_move(letter)
 
 
@@ -55,10 +66,11 @@ def check_winner(letter):
         return False
 
 
+print_board()
+
 # endless loop for game to never officially end unless 'break' from a win
 
 while True:
-    print_board()
     player_move('X')
     print_board()
     if check_winner('X'):
