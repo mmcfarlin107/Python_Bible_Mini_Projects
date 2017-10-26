@@ -2,35 +2,35 @@
 
 # using list comprehension below to create tic-tac-toe board
 
-board = ["_" for i in range(0,9)]
+board = ["_" for i in range(0, 9)]
 
-#global variable being used to watch for a tie
+# global variable being used to watch for a tie
 counter = 0
+
 
 # prints board with updated content every time a player makes a move
 def print_board():
-     print(" {} | {} | {} \n {} | {} | {} \n {} | {} | {}".format(board[0],
-                                                               board[1],
-                                                               board[2],
-                                                               board[3],
-                                                               board[4],
-                                                               board[5],
-                                                               board[6],
-                                                               board[7],
-                                                               board[8]
-                                                               ))
+    print()
+    print(
+        f" {board[0]} | {board[1]} | {board[2]} \n {board[3]} | {board[4]} | "
+        f"{board[5]} \n {board[6]} | {board[7]} | {board[8]} "
+    )
+    print()
+
+
 # Takes players move choice as an input
 # If the input is a valid number for the game and the space is not taken, the player gets the spot.
 # If the spot is taken or the input is not a valid number, the function uses recursion to call itself again.
 def player_move(letter):
     move = int(input("What space would you like player " + letter + " (1-9)?: ").strip())
-    if move in range(1,10) and board[move - 1] == "_":
+    if move in range(1, 10) and board[move - 1] == "_":
         board[move - 1] = letter
         global counter
         counter += 1
     else:
-        print ('Invalid Choice! Choose again...')
+        print('Invalid Choice! Choose again...')
         player_move(letter)
+
 
 def check_winner(letter):
     # checking horizontal
@@ -40,7 +40,7 @@ def check_winner(letter):
         return True
     elif board[6] == letter and board[7] == letter and board[8] == letter:
         return True
-    #checking diagonal
+    # checking diagonal
     elif board[0] == letter and board[3] == letter and board[6] == letter:
         return True
     elif board[1] == letter and board[4] == letter and board[7] == letter:
@@ -54,11 +54,13 @@ def check_winner(letter):
     else:
         return False
 
+
 # endless loop for game to never officially end unless 'break' from a win
 
 while True:
     print_board()
     player_move('X')
+    print_board()
     if check_winner('X'):
         print('Player X Wins!')
         break
@@ -69,8 +71,8 @@ while True:
     if counter == 9:
         print("It's a Draw!")
         break
-    print_board()
     player_move('O')
+    print_board()
     if check_winner('O'):
         print('Player O Wins!')
         break
