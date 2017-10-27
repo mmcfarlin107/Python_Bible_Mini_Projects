@@ -25,8 +25,6 @@ class Coin:
     def __del__(self):
         print('Coin Spent!')
 
-# created a Coin object called penny
-penny = Coin(rare=True)
-
 # testing if worked
+penny = Coin()
 print(penny.color)
