@@ -10,11 +10,9 @@ counter = 0
 
 # prints board with updated content every time a player makes a move
 def print_board():
+    # unpacking board list to fill in spaces in format funciton
     print()
-    print(
-        f" {board[0]} | {board[1]} | {board[2]} \n {board[3]} | {board[4]} | "
-        f"{board[5]} \n {board[6]} | {board[7]} | {board[8]} "
-    )
+    print(" {} | {} | {} \n {} | {} | {} \n {} | {} | {} ".format(*board))
     print()
 
 
